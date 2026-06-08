@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuấn Anh & Quỳnh Trang</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Be+Vietnam+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Be Vietnam Pro',sans-serif;
+background:linear-gradient(180deg,#fff9fb,#f8fcff);
+color:#2c3e50;overflow-x:hidden
+}
+.hero{
+height:100vh;position:relative;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;padding:20px;
+background:
+linear-gradient(rgba(255,245,248,.55),rgba(248,252,255,.65)),
+url('anh4.jpg');
+background-size:cover;background-position:center;
+}
+.hero:before{
+content:'';position:absolute;inset:0;
+background:radial-gradient(circle at 20% 20%,rgba(173,216,230,.25),transparent 35%),
+radial-gradient(circle at 80% 70%,rgba(255,192,203,.18),transparent 35%);
+animation:float 8s ease-in-out infinite alternate;
+}
+@keyframes float{to{transform:translateY(-20px)}}
+h1{
+font-family:'Playfair Display',serif;
+font-size:4.8rem;
+color:#356b8c;
+text-shadow:0 2px 15px rgba(255,255,255,.8);
+z-index:2
+}
+.subtitle{z-index:2;font-size:1.1rem;color:#4d6475;margin-top:10px}
+.section{padding:80px 20px;text-align:center}
+.fade{opacity:0;transform:translateY(40px);transition:1s}
+.fade.show{opacity:1;transform:none}
+.countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:25px}
+.card{
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(10px);
+border:1px solid rgba(173,216,230,.3);
+padding:22px;border-radius:20px;min-width:95px;
+box-shadow:0 8px 30px rgba(0,0,0,.05)
+}
+.num{font-size:2rem;font-weight:700;color:#4a90b8}
+.slider{
+    max-width:1200px;
+    margin:40px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:0 20px;
+}
+.slider img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.slider img:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+.btn{
+display:inline-block;margin-top:20px;
+padding:14px 30px;border-radius:999px;
+background:#6fa8c9;color:white;text-decoration:none;
+transition:.3s;
+}
+.btn:hover{transform:translateY(-3px)}
+footer{
+    background:linear-gradient(180deg,#fff,#f6fbff);
+    padding:120px 20px;
+    text-align:center;
+}
+.thankyou{
+    max-width:600px;
+    margin:0 auto;
+    font-size:1.1rem;
+    line-height:1.8;
+}
+@media(max-width:768px){
+
+h1{
+    font-size:3rem;
+}
+
+.slider{
+    grid-template-columns:1fr;
+}
+
+.slider img{
+    height:320px;
+}
+}
+.line{
+width:90px;height:3px;margin:15px auto;
+background:linear-gradient(90deg,#f7c7d9,#9dd1ee)
+}
+@media(max-width:768px){
+h1{font-size:3rem}
+.slider img{height:280px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<h1>Tuấn Anh & Quỳnh Trang</h1>
+<p class="subtitle">Trân trọng kính mời tham dự lễ thành hôn</p>
+</section>
+
+<section class="section fade">
+<h2>Đếm Ngược Ngày Cưới</h2>
+<div class="line"></div>
+<div class="countdown">
+<div class="card"><div id="d" class="num">0</div>Ngày</div>
+<div class="card"><div id="h" class="num">0</div>Giờ</div>
+<div class="card"><div id="m" class="num">0</div>Phút</div>
+<div class="card"><div id="s" class="num">0</div>Giây</div>
+</div>
+</section>
+
+<section class="section fade">
+<h2>Địa Điểm</h2>
+<div class="line"></div>
+<p>Hiến Nạp - Minh Khai - Hưng Hà - Thái Bình</p>
+<a class="btn" href="https://maps.app.goo.gl/GWiT4EA9UwKfDWpW6" target="_blank">Xem Chỉ Đường</a>
+</section>
+
+<section class="section fade">
+    <h2>Album Ảnh</h2>
+    <div class="line"></div>
+
+    <div class="slider">
+        <img src="anh1.jpg" alt="">
+        <img src="anh2.jpg" alt="">
+        <img src="anh3.jpg" alt="">
+    </div>
+</section>
+
+<footer class="fade">
+    <h2>Lời Cảm Ơn</h2>
+
+    <div class="line"></div>
+
+    <p class="thankyou">
+        Sự hiện diện của quý vị là niềm vui và vinh hạnh lớn lao đối với gia đình chúng tôi.
+
+        <br><br>
+
+        Xin chân thành cảm ơn và mong được đón tiếp quý vị trong ngày trọng đại của
+        Tuấn Anh & Quỳnh Trang.
+    </p>
+</footer>
+
+<script>
+const weddingDate = new Date("2026-06-20T09:00:00").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const diff=weddingDate-now;
+document.getElementById('d').innerText=Math.floor(diff/86400000);
+document.getElementById('h').innerText=Math.floor((diff%86400000)/3600000);
+document.getElementById('m').innerText=Math.floor((diff%3600000)/60000);
+document.getElementById('s').innerText=Math.floor((diff%60000)/1000);
+},1000);
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
